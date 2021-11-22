@@ -24,6 +24,7 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 
 // Add your functions below:
+//function returns true when credit card is valid and false when its invalid using luhn algorithm
 const validateCred = (array) =>{
     const newArray = array.map(elements=> elements);
     const popped = newArray.pop();
@@ -42,9 +43,7 @@ const validateCred = (array) =>{
     const total = newArray.reduce(reducer);
     const checker = total + popped;
     //const creditCard = array.join('');
-    if( checker%10 === 0){
-        return true;            // 'The credit card '+creditCard+' is valid';
-    } else return false;        //'The credit card '+creditCard+' is invalid';
+    checker%10 === 0?  true: false;
     
 }
 
@@ -95,7 +94,6 @@ const idInvalidCardCompanies = (nestedArray) =>{
     return companiesArray;
 
 }
-
 console.log(findInvalidCards(batch));
 console.log(idInvalidCardCompanies(batch));
 
